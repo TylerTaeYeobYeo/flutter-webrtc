@@ -70,8 +70,6 @@
                                         AVAudioSessionCategoryOptionAllowBluetooth
                                   error:&error];
 
-    success = [session.session overrideOutputAudioPort:kAudioSessionOverrideAudioRoute_None
-                                                 error:&error];
     if (!success)
       NSLog(@"Port override failed due to: %@", error);
   } else {
@@ -83,8 +81,6 @@
                                         AVAudioSessionCategoryOptionAllowBluetooth
                                   error:&error];
 
-    success = [session overrideOutputAudioPort:kAudioSessionOverrideAudioRoute_Speaker
-                                         error:&error];
     if (!success)
       NSLog(@"Port override failed due to: %@", error);
   }
